@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            background-color: #ECEFF4;
+            font: Noto Sans Traditional Chinese;
+        }
+
+        .countdown-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 100px auto;
+            max-width: 500px;
+            color: #5E81AC;
+        }
+
+        .countdown-header {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .countdown {
+            font-size: 36px;
+            width: 500px;
+            height: 50px;
+            line-height: 50px;
+            padding: 10px;
+            background: #4C566A;
+            color: #ECEFF4;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="countdown-container">
+        <h2 class="countdown-header">身障技能競賽倒數</h2>
+        <div id="countdown1" class="countdown"></div>
+
+        <h2 class="countdown-header">統測倒數</h2>
+        <div id="countdown2" class="countdown"></div>
+    </div>
+
+    <script>
+        // 設定第一個截止日期
+        const deadline1 = new Date('2024-10-17 00:00:00');
+
+        // 設定第二個截止日期
+        const deadline2 = new Date('2025-05-03 00:00:00');
+
+        // 計算剩餘時間 (第一個計時器)
+        function getTimeRemaining1() {
+            const now = new Date();
+            const diff = deadline1 - now;
+
+            if (diff <= 0) {
+                return 'Time is up!';
+            }
+
+            const seconds = Math.floor((diff / 1000) % 60);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+            return `${days} 天 ${hours} 小時 ${minutes} 分鐘 ${seconds} 秒`;
+        }
+
+        // 更新第一個計時器
+        function updateCountdown1() {
+            const countdown1 = document.getElementById('countdown1');
+            countdown1.textContent = getTimeRemaining1();
+
+            setInterval(updateCountdown1, 1000);
+        }
+
+        // 計算剩餘時間 (第二個計時器)
+        function getTimeRemaining2() {
+            const now = new Date();
+            const diff = deadline2 - now;
+
+            if (diff <= 0) {
+                return 'Time is up!';
+            }
+
+            const seconds = Math.floor((diff / 1000) % 60);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+            return `${days} 天 ${hours} 小時 ${minutes} 分鐘 ${seconds} 秒`;
+        }
+
+        // 更新第二個計時器
+        function updateCountdown2() {
+            const countdown2 = document.getElementById('countdown2');
+            countdown2.textContent = getTimeRemaining2();
+
+            setInterval(updateCountdown2, 1000);
+        }
+
+        // 開始第一個計時器
+        updateCountdown1();
+
+        // 開始第二個計時器
+        updateCountdown2();
+    </script>
+</body>
+</html
