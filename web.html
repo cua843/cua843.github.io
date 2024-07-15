@@ -27,8 +27,8 @@
         }
 
         .countdown {
-            font-size: 36px;
-            width: 500px;
+            font-size: 30px;
+            width: 400px;
             height: 50px;
             line-height: 50px;
             padding: 10px;
@@ -68,7 +68,7 @@
             const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
             const days = Math.floor(diff / (1000 * 60 * 60 * 24));
 
-            return `${days} 天 ${hours} 小時 ${minutes} 分鐘`;
+            return `${days} 天 ${hours} 小時 ${minutes} 分鐘 ${seconds} 秒`;
         }
 
         // 更新第一個計時器
@@ -93,7 +93,7 @@
             const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
             const days = Math.floor(diff / (1000 * 60 * 60 * 24));
 
-            return `${days} 天 ${hours} 小時 ${minutes} 分鐘`;
+            return `${days} 天 ${hours} 小時 ${minutes} 分鐘 ${seconds} 秒`;
         }
 
         // 更新第二個計時器
