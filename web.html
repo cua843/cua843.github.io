@@ -46,14 +46,20 @@
 
         <h2 class="countdown-header">統測倒數</h2>
         <div id="countdown2" class="countdown"></div>
+
+        <h2 class="countdown-header">學測倒數</h2>
+        <div id="countdown3" class="countdown"></div>
+
+        <h2 class="countdown-header">分科倒數</h2>
+        <div id="countdown4" class="countdown"></div>
     </div>
 
     <script>
-        // 設定第一個截止日期
+        // 設定截止日期
         const deadline1 = new Date('2024-10-17 00:00:00');
-
-        // 設定第二個截止日期
         const deadline2 = new Date('2025-05-03 00:00:00');
+        const deadline3 = new Date('2025-01-18 00:00:00');
+        const deadline4 = new Date('2025-07-11 00:00:00');
 
         // 計算剩餘時間 (第一個計時器)
         function getTimeRemaining1() {
@@ -86,7 +92,7 @@
             const diff = deadline2 - now;
 
             if (diff <= 0) {
-                return 'Time is up!';
+                return '時間到了喔:D';
             }
 
             const seconds = Math.floor((diff / 1000) % 60);
@@ -104,12 +110,67 @@
 
             setInterval(updateCountdown2, 1000);
         }
+        
+        // 計算剩餘時間 (第三個計時器)
+        function getTimeRemaining3() {
+            const now = new Date();
+            const diff = deadline3 - now;
 
+            if (diff <= 0) {
+                return '時間到了喔:D';
+            }
+
+            const seconds = Math.floor((diff / 1000) % 60);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+            return `${days} 天 ${hours} 小時 ${minutes} 分鐘 ${seconds} 秒`;
+        }
+
+        // 更新第三個計時器
+        function updateCountdown3() {
+            const countdown3 = document.getElementById('countdown3');
+            countdown3.textContent = getTimeRemaining3();
+
+            setInterval(updateCountdown3, 1000);
+        }
+
+        // 計算剩餘時間 (第四個計時器)
+        function getTimeRemaining4() {
+            const now = new Date();
+            const diff = deadline4 - now;
+
+            if (diff <= 0) {
+                return '時間到了喔:D';
+            }
+
+            const seconds = Math.floor((diff / 1000) % 60);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+            return `${days} 天 ${hours} 小時 ${minutes} 分鐘 ${seconds} 秒`;
+        }
+
+        // 更新第四個計時器
+        function updateCountdown4() {
+            const countdown4 = document.getElementById('countdown4');
+            countdown4.textContent = getTimeRemaining4();
+
+            setInterval(updateCountdown4, 1000);
+        }
         // 開始第一個計時器
         updateCountdown1();
 
         // 開始第二個計時器
         updateCountdown2();
+        
+        // 開始第三個計時器
+        updateCountdown3();
+
+        // 開始第四個計時器
+        updateCountdown4();
     </script>
 </body>
 </html>
