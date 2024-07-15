@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Countdown Timer</title>
+    <title>倒數計時</title>
+    <link rel="shortcut icon" href="https://github.com/cua843/cua843.github.io/blob/main/2766schedule.ico/">
     <style>
         body {
             font-family: sans-serif;
             text-align: center;
             background-color: #ECEFF4;
-            font: Noto Sans Traditional Chinese;
+            font: Noto Sans;
         }
 
         .countdown-container {
@@ -60,7 +61,7 @@
             const diff = deadline1 - now;
 
             if (diff <= 0) {
-                return 'Time is up!';
+                return '時間到了喔:D';
             }
 
             const seconds = Math.floor((diff / 1000) % 60);
@@ -68,7 +69,7 @@
             const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
             const days = Math.floor(diff / (1000 * 60 * 60 * 24));
 
-            return `${days} 天 ${hours} 小時 ${minutes} 分鐘`;
+            return `${days} 天 ${hours} 小時 ${minutes} 分鐘 ${seconds} 秒`;
         }
 
         // 更新第一個計時器
@@ -111,4 +112,4 @@
         updateCountdown2();
     </script>
 </body>
-</html
+</html>
