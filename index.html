@@ -9,45 +9,50 @@
         body {
             font-family: sans-serif;
             text-align: center;
-            background-color: #ffffff;
+            background-color: #ECEFF4;
+            color:#3B4252 ;
             font: Noto Sans;
         }
 
         .countdown-container {
             display: flex;
             flex-direction: column;
+            justify-content: center;
             align-items: center;
-            margin: 100px auto;
+            margin: 50px auto;
             max-width: 500px;
             color: #3B4252;
         }
 
         .countdown-header {
             font-size: 20px;
-            margin-bottom: 10px;
+            margin-bottom: 5%;
         }
 
         .countdown {
-            font-size: 20px;
-            width: 300px;
-            height: 400px;
+            font-size: 16px;
+            width: 250px;
+            height: 300px;
             line-height: 30px;
             padding: 10px;
-            background: #eceff4;
-            color: #81A1C1;
-            border-radius: 10px;
-            flex: 1 1 50%
+            background: #D8DEE9;
+            color: #4C566A;
+            border-radius: 20px;
+            flex: 1 1 100%
         }
     </style>
 </head>
 <body>
+    <div><div>
     <div class="countdown-container">
-        <h2 class="countdown-header">這...應該是個自介（？</h2>
-        <div id="countdown1" class="countdown"></div>
+        <h2 class="countdown-header">自介</h2>
+        <div id="countdown1" class="countdown">興趣是寫python🐍+3D printing💡嘗試學習中：SQL語言、資訊安全 
+        </div>
+        <div id="countdown1" class="countdown">會有這個網站的原因其實只是因為剛好在練習HTML，所以花了一點時間寫出來，目標會繼續優化這裡（？</div>
     </div>
     <div class="countdown-container">
-        <h2 class="countdown-header">我的小開發</h2>
-        <div id="countdown2" class="countdown"><a href="https://cua843.github.io/web.html" target="_blank">統測倒數器</a></div>
+        <h2 class="countdown-header">我的小開發-統測倒數器</h2>
+        <div id="countdown2" class="countdown"><a href="https://cua843.github.io/web.html"><img src="https://raw.githubusercontent.com/cua843/cua843.github.io/main/favicon.ico" width="150" height="150"></a></div>
     </div>
 
     <script>
