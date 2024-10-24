@@ -59,7 +59,8 @@
         const deadline1 = new Date('2024-12-05 00:00:00');
         const deadline2 = new Date('2025-04-26 00:00:00');
         const deadline3 = new Date('2024-12-10 00:00:00');
-        const deadline4 = new Date('2024-12-03 00:00:00');
+        const deadline4 = new Date('2024-12-02 00:00:00');
+        const deadline5 = new Date('2025-03-18 00:00:00');
 
         // 計算剩餘時間 (第一個計時器)
         function getTimeRemaining1() {
@@ -160,6 +161,30 @@
 
             setInterval(updateCountdown4, 1000);
         }
+// 計算剩餘時間 (第五個計時器)
+        function getTimeRemaining5() {
+            const now = new Date();
+            const diff = deadline5 - now;
+
+            if (diff <= 0) {
+                return '時間到了喔:D';
+            }
+
+            const seconds = Math.floor((diff / 1000) % 60);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+            return `${days} 天 ${hours} 小時 ${minutes} 分鐘 ${seconds} 秒`;
+        }
+
+        // 更新第五個計時器
+        function updateCountdown5() {
+            const countdown5 = document.getElementById('countdown5');
+            countdown1.textContent = getTimeRemaining5();
+
+            setInterval(updateCountdown5, 1000);
+        }
         // 開始第一個計時器
         updateCountdown1();
 
@@ -171,6 +196,9 @@
 
         // 開始第四個計時器
         updateCountdown4();
+
+        // 開始第五個計時器
+        updateCountdown5();
     </script>
 </body>
 </html>
