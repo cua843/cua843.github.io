@@ -44,7 +44,7 @@
         <h2 class="countdown-header">技優簡章公告</h2>
         <div id="countdown1" class="countdown"></div>
 
-        <h2 class="countdown-header">統測倒數</h2>
+        <h2 class="countdown-header">保送放榜倒數</h2>
         <div id="countdown2" class="countdown"></div>
 
         <h2 class="countdown-header">第二次模擬考倒數</h2>
@@ -53,17 +53,17 @@
         <h2 class="countdown-header">第二次段考倒數</h2>
         <div id="countdown4" class="countdown"></div>
         
-        <h2 class="countdown-header">保送放榜倒數</h2>
+        <h2 class="countdown-header">統測倒數</h2>
         <div id="countdown5" class="countdown"></div>
     </div>
 
     <script>
         // 設定截止日期
         const deadline1 = new Date('2024-12-05 00:00:00');
-        const deadline2 = new Date('2025-04-26 00:00:00');
+        const deadline2 = new Date('2025-03-18 00:00:00');
         const deadline3 = new Date('2024-12-10 00:00:00');
         const deadline4 = new Date('2024-12-02 00:00:00');
-        const deadline5 = new Date('2025-03-18 00:00:00');
+        const deadline5 = new Date('2025-04-26 00:00:00');
 
         // 計算剩餘時間 (第一個計時器)
         function getTimeRemaining1() {
@@ -184,7 +184,7 @@
         // 更新第五個計時器
         function updateCountdown5() {
             const countdown5 = document.getElementById('countdown5');
-            countdown1.textContent = getTimeRemaining5();
+            countdown5.textContent = getTimeRemaining5();
 
             setInterval(updateCountdown5, 1000);
         }
